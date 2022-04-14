@@ -71,8 +71,23 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        $rules = [
+            'name' => 'bail|required|string|max:255',
+            "biography" => 'bail|required',
+        ];
+    
+        $this->validate($request, $rules);
+    
+        // 3. On met à jour les informations du Post
+        $user->update([
+            "name" => $request->name,
+            "biography" => $request->biography
+        ]);
+    
+        // 4. On affiche le Post modifié : route("posts.show")
+        return redirect(route("users.show", $user));
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -82,6 +97,6 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        
     }
 }

@@ -24,10 +24,10 @@
 		@csrf
 		
 		<p>
-			<label for="title" >Titre</label><br/>
+			<label for="name" >Nom:</label><br/>
 
 			<!-- S'il y a un $post->title, on complète la valeur de l'input -->
-			<input type="text" name="title" value="{{ isset($user->name) ? $user->name : old('name') }}"  id="name" placeholder="Jean Forgeron" >
+			<input type="text" name="name" value="{{ isset($user->name) ? $user->name : old('name') }}"  id="name" placeholder="Jean Forgeron" >
 
 			<!-- Le message d'erreur pour "title" -->
 			@error("name")

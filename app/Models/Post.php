@@ -18,5 +18,6 @@ class Post extends Model
         'description',
         'img_url',
         'user_id',
+        'title',
     ];
 }

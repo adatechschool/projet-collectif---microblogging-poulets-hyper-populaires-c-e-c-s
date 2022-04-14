@@ -14,7 +14,10 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $posts = Post::latest()->get();
+
+        // On transmet les Post à la vue
+        return view("posts.index", compact("posts"));
     }
 
     /**
@@ -24,7 +27,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view("posts.edit");
     }
 
     /**
@@ -35,7 +38,25 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'title' => 'bail|required|string|max:255',
+            "img_url" => 'bail|required|image|max:1024',
+            "description" => 'bail|required',
+        ]);
+    
+        // 2. On upload l'image dans "/storage/app/public/posts"
+        $chemin_image = $request->img_url->store("posts");
+    
+        // 3. On enregistre les informations du Post
+        Post::create([
+            "title" => $request->title,
+            "img_url" => $chemin_image,
+            "description" => $request->description,
+            "user_id" => 1
+        ]);
+    
+        // 4. On retourne vers tous les posts : route("posts.index")
+        return redirect(route("posts.index"));
     }
 
     /**
