@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -53,7 +55,7 @@ class PostController extends Controller
             "title" => $request->title,
             "img_url" => $chemin_image,
             "description" => $request->description,
-            "user_id" => 1
+            "user_id" => Auth::user()->id
         ]);
 
         // 4. On retourne vers tous les posts : route("posts.index")
@@ -68,9 +70,8 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        return view('posts.show', [
-            'post' => $post
-        ]);
+        $user=User::find($post->user_id);
+        return view('posts.show', compact('post','user'));
     }
 
     /**
@@ -80,6 +81,8 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Post $post) {
+
+        $user_auth=Auth::user()->id;
         return view("posts.edit",  compact("post"));
     }
 
