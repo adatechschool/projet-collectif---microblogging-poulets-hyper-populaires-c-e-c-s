@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Post;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -59,7 +60,11 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        return view('users.edit', compact("user"));
+        if (Auth::user()->id == $user->id) {
+            return view('users.edit', compact("user"));
+        } else {
+            return redirect(route("users.show", $user));
+        }
     }
 
     /**
