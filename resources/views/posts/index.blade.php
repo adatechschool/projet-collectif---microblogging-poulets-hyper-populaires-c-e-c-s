@@ -3,8 +3,9 @@
 @section("title")
 
 @section("content")
-
+<div id="hello">
 	<h1>Tous les articles</h1>
+	</div>
 
 	<p>
 		<!-- Lien pour créer un nouvel article : "posts.create" -->

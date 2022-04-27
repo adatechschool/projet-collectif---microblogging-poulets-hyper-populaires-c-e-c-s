@@ -6,6 +6,7 @@
 
 <h1>Editer un post</h1>
 
+
 	<!-- Si nous avons un Post $post -->
 	@if (isset($post))
 
@@ -69,3 +70,5 @@
 		<input type="submit" name="valider" value="Valider" >
 
 	</form>
+
+
