@@ -1,11 +1,6 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
-
-/* Header */
 header
 {
-    background: url('https://us.123rf.com/450wm/cingisiz/cingisiz1208/cingisiz120800005/15190282-poulet-de-bande-dessin%C3%A9e-daft-02.jpg?ver=6') repeat-x bottom;
+    background:teal ;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -39,6 +34,7 @@ header h2
     font-size: 1.1em;
     margin-top: 0px;
     font-weight: normal;
+    margin: 0 0 0 10px;
 }
 nav ul
 {
