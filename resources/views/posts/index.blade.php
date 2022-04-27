@@ -1,5 +1,7 @@
 @extends("layouts.app")
-@section("title", "Tous les articles")
+
+@section("title")
+
 @section("content")
 
 	<h1>Tous les articles</h1>
