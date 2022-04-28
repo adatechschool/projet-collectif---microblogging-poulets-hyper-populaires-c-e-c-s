@@ -1,9 +1,13 @@
-html { height: 100%; }
+html { min-height: 100vh;
+/* 
+
+*/background-image: url('https://swall.teahub.io/photos/small/16-169641_chicken-wallpaper-kitchen.jpg'); }
 
 body { min-height: 100%;
-     position: relative;
       padding-bottom: 1px;
-      box-sizing: border-box; }
+      box-sizing: border-box;
+    
+    }
 
 header
 {
@@ -70,7 +74,7 @@ nav a:hover
 
 footer {
     background : teal;
-    position: absolute;
+    margin-top: auto;
     bottom:0;
     width:100%;
     padding-top:50px;
@@ -129,4 +133,38 @@ footer h1
 {
     text-decoration: none;
     color: #760001;
+}
+
+#left {
+    margin-top:30px;
+
+}
+article{
+    display:flex;
+    flex-wrap:wrap;
+    margin-bottom:30px;
+    text-align: center;
+
+
+}
+#left img {
+    height:100px;
+    width:200px;
+
+}
+#right {
+    display: flex;
+    flex-flow: row wrap;
+    margin: left 40%;
+    gap:10px;
+}
+
+#card {
+    border: 1px solid black;
+    background: hsl(60, 56%, 91%, 0.9);
+}
+
+#details {
+    background: hsla(60, 80%, 90%, 0.8);
+
 }

@@ -9,6 +9,12 @@ class Post extends Model
 {
     use HasFactory;
 
+
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);

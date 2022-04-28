@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\LikeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,6 @@ require __DIR__.'/auth.php';
 Route::resource('posts', PostController::class);
 
 Route::resource('users', UserController::class);
+
+Route::resource('likes', LikeController::class);
+

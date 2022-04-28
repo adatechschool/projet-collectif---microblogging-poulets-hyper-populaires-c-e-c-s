@@ -58,10 +58,10 @@
         <h1>Nos informations</h1>
         <div id="listes_amis">
             <ul>
-                <li><a href="#">Constant</a></li>
-                <li><a href="#">Celine</a></li>
-                <li><a href="#">Esther</a></li>
-                <li><a href="#">Sonia</a></li>
+                <li><a href="https://github.com/Astating">Constant</a></li>
+                <li><a href="https://github.com/celinelouaintier">Celine</a></li>
+                <li><a href="https://github.com/EstherL6">Esther</a></li>
+                <li><a href="https://github.com/Soso-M">Sonia</a></li>
             </ul>
         </div>
     </div>
