@@ -1,7 +1,10 @@
-<x-guest-layout>
+@extends('layouts.app')
+@section('content')
+
+<div>
     {{$user->name}}:
     {{$user->biography}}
-</x-guest-layout>
+<div>
 
 <div class="container">
    @foreach($data as $posts)
@@ -10,3 +13,5 @@
       <p>Posted by: {{ $posts->user_id }}</p>
     @endforeach
 </div>
+
+@endsection

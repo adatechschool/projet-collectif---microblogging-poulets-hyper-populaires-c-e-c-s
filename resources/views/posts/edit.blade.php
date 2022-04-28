@@ -1,5 +1,4 @@
 @extends("layouts.app")
-@section("title", "Editer un post")
 @section("content")
 
 
@@ -71,4 +70,4 @@
 
 	</form>
 
-
+@endsection

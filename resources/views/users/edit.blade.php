@@ -1,5 +1,4 @@
 @extends("layouts.app")
-@section("title", "Editer un post")
 @section("content")
 
 	<h1>Editer un user</h1>
@@ -22,7 +21,7 @@
 
 		<!-- Le token CSRF -->
 		@csrf
-		
+
 		<p>
 			<label for="name" >Nom:</label><br/>
 
